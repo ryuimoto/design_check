@@ -16,5 +16,5 @@ Route::get('/', function () {
 });
 
 Route::get('/test',function(){
-    return 'これはテストだよ';
+    return 'これから作ってくよん';
 });
