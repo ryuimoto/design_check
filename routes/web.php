@@ -12,7 +12,5 @@
 */
 
 Route::group(['middleware' => 'auth.very_basic'], function() {
-    Route::get('/',function(){
-        return 'これから作ってくよん';
-    });
+    Route::get('','TestController@index');
 });
