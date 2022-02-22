@@ -13,4 +13,5 @@
 
 Route::group(['middleware' => 'auth.very_basic'], function() {
     Route::get('','TestController@index');
+    
 });
