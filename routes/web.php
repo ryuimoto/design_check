@@ -12,6 +12,10 @@
 */
 
 Route::group(['middleware' => 'auth.very_basic'], function() {
-    Route::get('','TestController@index');
+    Route::get('', function () {
+        return view('user.top');
+    });
+
+    
     
 });
