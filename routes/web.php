@@ -17,5 +17,7 @@ Route::group(['middleware' => 'auth.very_basic'], function() {
     });
 
     
+
+
     
 });
