@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>FlexStart Bootstrap Template - Index</title>
+  <title>DesignCheck</title>
   <meta content="" name="description">
 
   <meta content="" name="keywords">
@@ -44,36 +44,17 @@
 
       <a href="index.html" class="logo d-flex align-items-center">
         <img src="{{ asset('FlexStart/assets/img/logo.png') }}" alt="">
-        <span>FlexStart</span>
+        <span>DesignCheck</span>
       </a>
 
       <nav id="navbar" class="navbar">
         <ul>
-          <li><a class="nav-link scrollto active" href="#hero">Home</a></li>
-          <li><a class="nav-link scrollto" href="#about">About</a></li>
-          <li><a class="nav-link scrollto" href="#services">Services</a></li>
-          <li><a class="nav-link scrollto" href="#portfolio">Portfolio</a></li>
-          <li><a class="nav-link scrollto" href="#team">Team</a></li>
-          <li><a href="blog.html">Blog</a></li>
-          <li class="dropdown"><a href="#"><span>Drop Down</span> <i class="bi bi-chevron-down"></i></a>
-            <ul>
-              <li><a href="#">Drop Down 1</a></li>
-              <li class="dropdown"><a href="#"><span>Deep Drop Down</span> <i class="bi bi-chevron-right"></i></a>
-                <ul>
-                  <li><a href="#">Deep Drop Down 1</a></li>
-                  <li><a href="#">Deep Drop Down 2</a></li>
-                  <li><a href="#">Deep Drop Down 3</a></li>
-                  <li><a href="#">Deep Drop Down 4</a></li>
-                  <li><a href="#">Deep Drop Down 5</a></li>
-                </ul>
-              </li>
-              <li><a href="#">Drop Down 2</a></li>
-              <li><a href="#">Drop Down 3</a></li>
-              <li><a href="#">Drop Down 4</a></li>
-            </ul>
-          </li>
-          <li><a class="nav-link scrollto" href="#contact">Contact</a></li>
-          <li><a class="getstarted scrollto" href="#about">Get Started</a></li>
+          <li><a class="nav-link scrollto active" href="#hero">デザイナーを探す</a></li>
+          <li><a class="nav-link scrollto" href="#about">事例を見る</a></li>
+          <li><a class="nav-link scrollto" href="#services">初めての方へ</a></li>
+          <li><a class="nav-link scrollto" href="#portfolio">法人でご利用をお考えの方へ</a></li>
+          <li><a class="nav-link scrollto" href="#contact">ログイン</a></li>
+          <li><a class="getstarted scrollto" href="#about">サインアップ</a></li>
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
       </nav><!-- .navbar -->
@@ -87,12 +68,13 @@
     <div class="container">
       <div class="row">
         <div class="col-lg-6 d-flex flex-column justify-content-center">
-          <h1 data-aos="fade-up">We offer modern solutions for growing your business</h1>
-          <h2 data-aos="fade-up" data-aos-delay="400">We are team of talented designers making websites with Bootstrap</h2>
+          {{-- <h1 data-aos="fade-up">デザインのフィードバック欲しいデザイナーと、お小遣いが欲しいデザイン経験者のマッチングサービス</h1> --}}
+          <h1 data-aos="fade-up">駆け出しのデザイナーと<br>経験豊富のデザイナーを<br>繋げるマッチングサービス</h1>
+          <h2 data-aos="fade-up" data-aos-delay="400">3回目のやり取りまでは無料<br>それ以降は100万円から</h2>
           <div data-aos="fade-up" data-aos-delay="600">
             <div class="text-center text-lg-start">
               <a href="#about" class="btn-get-started scrollto d-inline-flex align-items-center justify-content-center align-self-center">
-                <span>Get Started</span>
+                <span>今すぐ始める</span>
                 <i class="bi bi-arrow-right"></i>
               </a>
             </div>
@@ -1241,7 +1223,7 @@
           <div class="col-lg-5 col-md-12 footer-info">
             <a href="index.html" class="logo d-flex align-items-center">
               <img src="{{ asset('FlexStart/assets/img/logo.png') }}" alt="">
-              <span>FlexStart</span>
+              <span>DesignCheck</span>
             </a>
             <p>Cras fermentum odio eu feugiat lide par naso tierra. Justo eget nada terra videa magna derita valies darta donna mare fermentum iaculis eu non diam phasellus.</p>
             <div class="social-links mt-3">
@@ -1292,14 +1274,7 @@
 
     <div class="container">
       <div class="copyright">
-        &copy; Copyright <strong><span>FlexStart</span></strong>. All Rights Reserved
-      </div>
-      <div class="credits">
-        <!-- All the links in the footer should remain intact. -->
-        <!-- You can delete the links only if you purchased the pro version. -->
-        <!-- Licensing information: https://bootstrapmade.com/license/ -->
-        <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/flexstart-bootstrap-startup-template/ -->
-        Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+        &copy; Copyright <strong><span>DesignCheck</span></strong>. All Rights Reserved
       </div>
     </div>
   </footer><!-- End Footer -->
