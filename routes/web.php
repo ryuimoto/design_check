@@ -16,8 +16,10 @@ Route::group(['middleware' => 'auth.very_basic'], function() {
         return view('user.top');
     });
 
-    
+    Route::group(['middleware' => 'user','prefix' => 'user'], function () {
+        Route::get('/test',function(){
+            return 423546;
+        });
+    });
 
-
-    
 });
