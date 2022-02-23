@@ -9,7 +9,7 @@
             <h2 data-aos="fade-up" data-aos-delay="400">3回目のやり取りまでは無料<br>それ以降は100万円から</h2>
             <div data-aos="fade-up" data-aos-delay="600">
                 <div class="text-center text-lg-start">
-                <a href="#about" class="btn-get-started scrollto d-inline-flex align-items-center justify-content-center align-self-center">
+                <a href="{{ route('user.register') }}" class="btn-get-started scrollto d-inline-flex align-items-center justify-content-center align-self-center">
                     <span>今すぐ始める</span>
                     <i class="bi bi-arrow-right"></i>
                 </a>
