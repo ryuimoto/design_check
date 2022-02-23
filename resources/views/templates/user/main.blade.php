@@ -54,7 +54,7 @@
           <li><a class="nav-link scrollto" href="#services">初めての方へ</a></li>
           <li><a class="nav-link scrollto" href="#portfolio">法人でご利用をお考えの方へ</a></li>
           <li><a class="nav-link scrollto" href="#contact">ログイン</a></li>
-          <li><a class="getstarted scrollto" href="#about">サインアップ</a></li>
+          <li><a class="getstarted scrollto" href="{{ route('user.register') }}">サインアップ</a></li>
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
       </nav><!-- .navbar -->

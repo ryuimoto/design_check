@@ -14,12 +14,14 @@
 Route::group(['middleware' => 'auth.very_basic'], function() {
     Route::get('', function () {
         return view('user.top');
-    });
+    })->name('user.top');
 
-    Route::group(['middleware' => 'user','prefix' => 'user'], function () {
-        Route::get('/test',function(){
-            return 423546;
-        });
-    });
+    Route::get('register','User\Auth\RegisterController@showRegistrationForm')->name('user.register');
+
+    // Route::group(['middleware' => 'user','prefix' => 'user'], function () {
+    //     Route::get('/test',function(){
+    //         return 423546;
+    //     });
+    // });
 
 });
