@@ -11,14 +11,16 @@ class TwoFactorAuthPassword extends Mailable
 {
     use Queueable, SerializesModels;
 
+    private $tfa_token = '';
+
     /**
      * Create a new message instance.
      *
      * @return void
      */
-    public function __construct()
+    public function __construct($tfa_token)
     {
-        //
+        $this->tfa_token = $tfa_token;
     }
 
     /**
@@ -28,6 +30,9 @@ class TwoFactorAuthPassword extends Mailable
      */
     public function build()
     {
-        return $this->view('view.name');
+        return $this->from('narrow617@gmail.com', 'DesignCheck')
+        ->subject('２段階認証のパスワード')
+        ->view('emails.two_factor_auth.password')
+        ->with('tfa_token', $this->tfa_token);
     }
 }
