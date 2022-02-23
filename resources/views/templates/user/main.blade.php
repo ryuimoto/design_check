@@ -53,7 +53,7 @@
           <li><a class="nav-link scrollto" href="#about">事例を見る</a></li>
           <li><a class="nav-link scrollto" href="#services">初めての方へ</a></li>
           <li><a class="nav-link scrollto" href="#portfolio">法人でご利用をお考えの方へ</a></li>
-          <li><a class="nav-link scrollto" href="#contact">ログイン</a></li>
+          <li><a class="nav-link scrollto" href="{{ route('user.login') }}">ログイン</a></li>
           <li><a class="getstarted scrollto" href="{{ route('user.register') }}">会員登録(無料)</a></li>
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
@@ -71,23 +71,6 @@
 
   <!-- ======= Footer ======= -->
   <footer id="footer" class="footer">
-
-    <div class="footer-newsletter">
-      <div class="container">
-        <div class="row justify-content-center">
-          <div class="col-lg-12 text-center">
-            <h4>Our Newsletter</h4>
-            <p>Tamen quem nulla quae legam multos aute sint culpa legam noster magna</p>
-          </div>
-          <div class="col-lg-6">
-            <form action="" method="post">
-              <input type="email" name="email"><input type="submit" value="Subscribe">
-            </form>
-          </div>
-        </div>
-      </div>
-    </div>
-
     <div class="footer-top">
       <div class="container">
         <div class="row gy-4">
