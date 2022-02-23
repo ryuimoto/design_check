@@ -3,12 +3,13 @@
 namespace App\Http\Controllers\User\Auth;
 
 use App\Http\Controllers\Controller;
+use App\Http\Controllers\TwoFactorAuthController;
 use Illuminate\Http\Request;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use App\Providers\RouteServiceProvider;
-
+use Illuminate\Support\Str;
 
 use App\User;
 
@@ -75,8 +76,16 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
-        return User::create([
-            'email' => $data['email'],
-        ]);
+        $random_password = (string) Str::uuid();
+        $two_factor_auth_controller = app()->make('App\Http\Controllers\TwoFactorAuthController');
+        $two_factor_auth_controller->firstAuth($data,$random_password);
+        
+        // return User::create([
+        //     'email' => $data['email'],
+        //     'tfa_token' => $random_password,
+        //     'tfa_expiration' => now()->addDays(2),
+        // ]);
+
+        return;
     }
 }

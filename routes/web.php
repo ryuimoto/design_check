@@ -19,6 +19,11 @@ Route::group(['middleware' => 'auth.very_basic'], function() {
     Route::get('register','User\Auth\RegisterController@showRegistrationForm')->name('user.register');
     Route::post('register','User\Auth\RegisterController@register');
 
+    // Route::get('register','TwoFactorAuthController@login_form')->name('user.register');
+    // Route::post('register','TwoFactorAuthController@first_auth');
+
+
+
     Route::get('login','User\Auth\LoginController@showLoginForm')->name('user.login');
 
     // Route::group(['middleware' => 'user','prefix' => 'user'], function () {
