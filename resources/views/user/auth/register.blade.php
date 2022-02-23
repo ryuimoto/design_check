@@ -25,7 +25,12 @@
                                 <div class="sent-message">Your message has been sent. Thank you!</div>
                                 <button type="submit">無料で会員登録する</button>
                             </div>
+                            <div class="col-md-12 text-center">
+                                <a href="">既に登録済みの方はこちら</a>
+                            </div>
+
                         </div>
+                     
                     </form>
                 </div>
             </div>
