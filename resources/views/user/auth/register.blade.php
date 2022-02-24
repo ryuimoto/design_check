@@ -11,8 +11,7 @@
                     <img src="{{ asset('FlexStart/assets/img/features-2.png') }}" class="img-fluid" alt="">
                 </div>
                 <div class="col-lg-6">
-                    <form method="post" action="{{ route('user.register') }}" class="php-email-form">
-                        {{-- <form method="post" action="{{ route('user.register') }}"> --}}
+                    <form method="post" action="{{ route('user.first_register') }}" class="php-email-form">
                         @csrf
                         <div class="row gy-4">
                             <div class="col-md-12">

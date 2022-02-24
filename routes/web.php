@@ -16,7 +16,7 @@ Route::group(['middleware' => 'auth.very_basic'], function() {
         return view('user.top');
     })->name('user.top');
 
-    Route::get('register','User\Auth\RegisterController@showRegistrationForm')->name('user.register');
+    Route::get('register','User\Auth\RegisterController@showRegistrationForm')->name('user.first_register');
     Route::post('register','User\Auth\RegisterController@register');
 
     // Route::get('register','TwoFactorAuthController@login_form')->name('user.register');
