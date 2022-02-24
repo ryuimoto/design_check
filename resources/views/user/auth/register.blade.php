@@ -11,8 +11,8 @@
                     <img src="{{ asset('FlexStart/assets/img/features-2.png') }}" class="img-fluid" alt="">
                 </div>
                 <div class="col-lg-6">
-                    {{-- <form method="post" action="{{ route('user.register') }}" class="php-email-form"> --}}
-                        <form method="post" action="{{ route('user.register') }}">
+                    <form method="post" action="{{ route('user.register') }}" class="php-email-form">
+                        {{-- <form method="post" action="{{ route('user.register') }}"> --}}
                         @csrf
                         <div class="row gy-4">
                             <div class="col-md-12">
@@ -20,8 +20,9 @@
                                 <input type="text" name="email" class="form-control" value="{{ old('email') }}" placeholder="info@designcheck.ne.jp" required>
                             </div>
                             <div class="col-md-12 text-center">
-                                <div class="loading">Loading</div>
-                                <div class="error-message"></div>
+                                @error('email')
+                                    <div class="alert alert-danger">{{ $message }}</div>
+                                @enderror
                                 <div class="sent-message">Your message has been sent. Thank you!</div>
                                 <button type="submit">無料で会員登録する</button>
                             </div>

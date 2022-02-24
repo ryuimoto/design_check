@@ -10,12 +10,6 @@ use App\User;
 
 class TwoFactorAuthController extends Controller
 {
-    public function login_form() {  // ログインフォーム
-        // return view('two_factor_auth.login_form');
-
-        return view('user.auth.register');
-    }
-
     // public function first_auth(Request $request) {  // １段階目の認証
     //     $credentials = $request->only('email', 'password');
 
@@ -49,7 +43,6 @@ class TwoFactorAuthController extends Controller
     // }
 
     public function firstAuth($request,$random_password){
-
         $user = User::create([
             'email' => $request['email'],
             'tfa_token' => $random_password,

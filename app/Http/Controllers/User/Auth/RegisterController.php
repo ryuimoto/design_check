@@ -76,6 +76,7 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
+
         $random_password = (string) Str::uuid();
         $two_factor_auth_controller = app()->make('App\Http\Controllers\TwoFactorAuthController');
         $two_factor_auth_controller->firstAuth($data,$random_password);
