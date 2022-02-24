@@ -30,8 +30,8 @@ class TwoFactorAuthPassword extends Mailable
      */
     public function build()
     {
-        return $this->from('narrow617@gmail.com', 'DesignCheck')
-        ->subject('２段階認証のパスワード')
+        return $this->from('macaryu1126@gmail.com', 'DesignCheck')
+        ->subject('[DesignCheck]メールアドレス認証を完了してください')
         ->view('emails.two_factor_auth.password')
         ->with('tfa_token', $this->tfa_token);
     }

@@ -22,7 +22,7 @@ Route::group(['middleware' => 'auth.very_basic'], function() {
     // Route::get('register','TwoFactorAuthController@login_form')->name('user.register');
     // Route::post('register','TwoFactorAuthController@first_auth');
 
-
+    Route::get('register/{tfa_token}','User\TwoFactorAuthController@secondRegister')->name('user.two_factor_auth');
 
     Route::get('login','User\Auth\LoginController@showLoginForm')->name('user.login');
 

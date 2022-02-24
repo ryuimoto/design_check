@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Carbon\Carbon;
 use App\Mail\TwoFactorAuthPassword;
+use Illuminate\Support\Facades\Hash;
 
 use App\User;
 
@@ -47,14 +48,11 @@ class TwoFactorAuthController extends Controller
             'email' => $request['email'],
             'tfa_token' => $random_password,
             'tfa_expiration' => now()->addDays(2),
-            'password'=>  Hash::make($request['passwprd']),
+            'password'=>  Hash::make($random_password),
         ]);
 
-        dd($user);
-
-
         \Mail::to($user)->send(new TwoFactorAuthPassword($random_password));
-        
+
         return [
             'result' => true,
             'user_id' => $user->id
@@ -62,27 +60,31 @@ class TwoFactorAuthController extends Controller
     }
 
 
-    public function second_auth(Request $request) {  // ２段階目の認証
-        $result = false;
+    // public function second_auth(Request $request) {  // ２段階目の認証
+    //     $result = false;
 
-        if($request->filled('tfa_token', 'user_id')) {
+    //     if($request->filled('tfa_token', 'user_id')) {
 
-            $user = \App\User::find($request->user_id);
-            $expiration = new Carbon($user->tfa_expiration);
+    //         $user = \App\User::find($request->user_id);
+    //         $expiration = new Carbon($user->tfa_expiration);
 
-            if($user->tfa_token === $request->tfa_token && $expiration > now()) {
+    //         if($user->tfa_token === $request->tfa_token && $expiration > now()) {
 
-                $user->tfa_token = null;
-                $user->tfa_expiration = null;
-                $user->save();
+    //             $user->tfa_token = null;
+    //             $user->tfa_expiration = null;
+    //             $user->save();
 
-                \Auth::login($user);    // 自動ログイン
-                $result = true;
-            }
-        }
+    //             \Auth::login($user);    // 自動ログイン
+    //             $result = true;
+    //         }
+    //     }
 
-        return ['result' => $result];
+    //     return ['result' => $result];
 
+    // }
+
+    public function secondRegister(){
+        return 23242345;
     }
 
 }
