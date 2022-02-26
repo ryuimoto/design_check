@@ -7,7 +7,7 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>gergerger</h1>
+    <h1>これからダッシュボード作ってくよん</h1>
     <a href="{{ route('user.logout') }}">ログアウト</a>
 </body>
 </html>

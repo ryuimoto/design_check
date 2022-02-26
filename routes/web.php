@@ -29,8 +29,8 @@ Route::group(['middleware' => 'auth.very_basic'], function() {
     Route::post('login','User\Auth\LoginController@login');
 
     Route::group(['middleware' => 'auth:user','prefix' => 'user'], function () {
-        Route::get('','User\HomeController@index')->name('user.top');
+        Route::get('','User\DashboardController@index')->name('user.top');
 
-        Route::get('logout','User\HomeController@logout')->name('user.logout');
+        Route::get('logout','User\Auth\LoginController@logout')->name('user.logout');
     });
 });
