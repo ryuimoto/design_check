@@ -79,14 +79,13 @@ class RegisterController extends Controller
         $random_password = (string) Str::uuid();
         $two_factor_auth_controller = app()->make('App\Http\Controllers\TwoFactorAuthController');
         $two_factor_auth_controller->firstAuth($data,$random_password);
+    
         
         // return User::create([
         //     'email' => $data['email'],
         //     'tfa_token' => $random_password,
         //     'tfa_expiration' => now()->addDays(2),
         // ]);
-
-        
 
         return;
     }
