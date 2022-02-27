@@ -35,7 +35,7 @@
     <div class="collapse navbar-collapse  w-auto  max-height-vh-100 h-100" id="sidenav-collapse-main">
       <ul class="navbar-nav">
         <li class="nav-item">
-          <a class="nav-link active" href="{{ route('user.top') }}">
+          <a class="nav-link {{ (\Request::routeIs('user.top')) ? 'active' : '' }}" href="{{ route('user.top') }}">
             <div class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
               <svg width="12px" height="12px" viewBox="0 0 45 40" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                 <title>shop </title>
@@ -55,7 +55,7 @@
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link  " href="{{ asset('soft-ui-dashboard-main/pages/billing.html') }}">
+          <a class="nav-link {{ (\Request::routeIs('user.questions')) ? 'active' : '' }}" href="{{ route('user.questions') }}">
             <div class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
               <svg width="12px" height="12px" viewBox="0 0 43 36" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                 <title>credit-card</title>
@@ -219,7 +219,7 @@
             <li class="nav-item d-flex align-items-center">
               <a href="javascript:;" class="nav-link text-body font-weight-bold px-0">
                 <i class="fa fa-user me-sm-1"></i>
-                <span class="d-sm-inline d-none fixed-plugin-button-nav">{{ $user->name }}さん</span>
+                <span class="d-sm-inline d-none fixed-plugin-button-nav">{{ \Auth::user()->name }}さん</span>
               </a>
             </li>
             <li class="nav-item d-xl-none ps-3 d-flex align-items-center">
@@ -281,7 +281,7 @@
     <div class="card shadow-lg ">
       <div class="card-header pb-0 pt-3 ">
         <div class="float-start">
-          <h5 class="mt-3 mb-0">{{ $user->name }}さん</h5>
+          <h5 class="mt-3 mb-0">{{ \Auth::user()->name }}さん</h5>
           <a href=""><p>プロフィールを表示</p></a>
         </div>
         <div class="float-end mt-4">
