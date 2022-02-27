@@ -8,7 +8,7 @@
   <link rel="apple-touch-icon" sizes="76x76" href="{{ asset('soft-ui-dashboard-main/assets/img/apple-icon.png') }}">
   <link rel="icon" type="image/png" href="{{ asset('soft-ui-dashboard-main/assets/img/favicon.png') }}">
   <title>
-    Soft UI Dashboard by Creative Tim
+    DesignCheck|管理画面
   </title>
   <!--     Fonts and icons     -->
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet" />
@@ -26,9 +26,9 @@
   <aside class="sidenav navbar navbar-vertical navbar-expand-xs border-0 border-radius-xl my-3 fixed-start ms-3 " id="sidenav-main">
     <div class="sidenav-header">
       <i class="fas fa-times p-3 cursor-pointer text-secondary opacity-5 position-absolute end-0 top-0 d-none d-xl-none" aria-hidden="true" id="iconSidenav"></i>
-      <a class="navbar-brand m-0" href="https://demos.creative-tim.com/soft-ui-dashboard/pages/dashboard.html" target="_blank">
+      <a class="navbar-brand m-0" href="{{ route('user.top') }}">
         <img src="{{ asset('soft-ui-dashboard-main/assets/img/logo-ct.png') }}" class="navbar-brand-img h-100" alt="main_logo">
-        <span class="ms-1 font-weight-bold">Soft UI Dashboard</span>
+        <span class="ms-1 font-weight-bold">DesignCheck</span>
       </a>
     </div>
     <hr class="horizontal dark mt-0">
@@ -243,7 +243,7 @@
             <li class="nav-item d-flex align-items-center">
               <a href="javascript:;" class="nav-link text-body font-weight-bold px-0">
                 <i class="fa fa-user me-sm-1"></i>
-                <span class="d-sm-inline d-none">Sign In</span>
+                <span class="d-sm-inline d-none">{{ $user->name }}さん</span>
               </a>
             </li>
             <li class="nav-item d-xl-none ps-3 d-flex align-items-center">
@@ -960,9 +960,7 @@
                 © <script>
                   document.write(new Date().getFullYear())
                 </script>,
-                made with <i class="fa fa-heart"></i> by
-                <a href="https://www.creative-tim.com" class="font-weight-bold" target="_blank">Creative Tim</a>
-                for a better web.
+                © Copyright DesignCheck. All Rights Reserved
               </div>
             </div>
             <div class="col-lg-6">
@@ -1037,7 +1035,7 @@
           <input class="form-check-input mt-1 ms-auto" type="checkbox" id="navbarFixed" onclick="navbarFixed(this)">
         </div>
         <hr class="horizontal dark my-sm-4">
-        <a class="btn bg-gradient-dark w-100" href="https://www.creative-tim.com/product/soft-ui-dashboard-pro">Free Download</a>
+        <a class="btn bg-gradient-dark w-100" href="{{ route('user.logout') }}">サインアウト</a>
         <a class="btn btn-outline-dark w-100" href="https://www.creative-tim.com/learning-lab/bootstrap/license/soft-ui-dashboard">View documentation</a>
         <div class="w-100 text-center">
           <a class="github-button" href="https://github.com/creativetimofficial/soft-ui-dashboard" data-icon="octicon-star" data-size="large" data-show-count="true" aria-label="Star creativetimofficial/soft-ui-dashboard on GitHub">Star</a>
