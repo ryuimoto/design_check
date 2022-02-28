@@ -13,4 +13,5 @@ class DashboardController extends Controller
 
         return view('user.dashboard.top');
     }
+
 }

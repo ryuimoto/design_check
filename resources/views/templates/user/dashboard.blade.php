@@ -145,7 +145,7 @@
       <div class="card-header pb-0 pt-3 ">
         <div class="float-start">
           <h5 class="mt-3 mb-0">{{ \Auth::user()->name }}さん</h5>
-          <a href=""><p>プロフィールを表示</p></a>
+          <a href="{{ route('user.profile') }}"><p>プロフィールを表示</p></a>
         </div>
         <div class="float-end mt-4">
           <button class="btn btn-link text-dark p-0 fixed-plugin-close-button">
@@ -348,7 +348,5 @@
   <script async defer src="https://buttons.github.io/buttons.js"></script>
   <!-- Control Center for Soft Dashboard: parallax effects, scripts for the example pages etc -->
   <script src="{{ asset('soft-ui-dashboard-main/assets/js/soft-ui-dashboard.min.js?v=1.0.3') }}"></script>
-
 </body>
-
 </html>
