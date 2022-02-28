@@ -27,7 +27,7 @@
                           As Uber works through a huge amount of internal management turmoil.
                         </p>
                         <div class="d-flex align-items-center justify-content-between">
-                          <button type="button" class="btn btn-outline-primary btn-sm mb-0">View Project</button>
+                          <button type="button" class="btn btn-outline-primary btn-sm mb-0" onclick="location.href='{{ route('user.question_detail') }}'">View Project</button>
                           <div class="avatar-group mt-2">
                             <a href="javascript:;" class="avatar avatar-xs rounded-circle" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Elena Morison">
                               <img alt="Image placeholder" src="{{ asset('soft-ui-dashboard-main/assets/img/team-1.jpg') }}">

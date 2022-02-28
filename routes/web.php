@@ -31,7 +31,11 @@ Route::group(['middleware' => 'auth.very_basic'], function() {
     Route::group(['middleware' => 'auth:user','prefix' => 'user'], function () {
         Route::get('','User\DashboardController@index')->name('user.top');
 
+        // Route::get('profile','User\ProfileController@index')->name('user.profile');
+
         Route::get('questions','User\QuestionController@index')->name('user.questions');
+
+        Route::get('question','User\QuestionController@detail')->name('user.question_detail');
 
 
         Route::get('logout','User\Auth\LoginController@logout')->name('user.logout');
