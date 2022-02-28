@@ -7,11 +7,20 @@ use Illuminate\Cache\RetrievesMultipleKeys;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
+use App\Question;
+use App\Answer;
+
 
 class QuestionController extends Controller
 {
     public function index(){
-        return view('user.dashboard.questions');
+        $user = Auth::user();
+        $questions = Question::where('user_id',$user->id)->get();
+        
+        return view('user.dashboard.questions')->with([
+            'user' => $user,
+            'questions' => $questions,
+        ]);
     }
 
     public function detail(){
