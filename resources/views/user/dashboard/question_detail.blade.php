@@ -36,6 +36,7 @@
                 <p class="mb-1 pt-2 text-bold">回答</p>
               </div>
               <div class="col-md-4 text-end">
+                <p>{{ $answer->created_at->format('Y年m月d日 H:i') }}</p>
                 <a href="javascript:;">
                   <i class="fas fa-user-edit text-secondary text-sm" data-bs-toggle="tooltip" data-bs-placement="top" title="Edit Profile"></i>
                 </a>

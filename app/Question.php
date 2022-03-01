@@ -31,4 +31,8 @@ class Question extends Model
         return $this->hasOne('App\User','id','user_id');
     }
 
+    public function answers(){
+        return $this->hasMany('App\Answer','question_id','id');
+    }
+
 }
