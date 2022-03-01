@@ -9,13 +9,13 @@
                 <div class="d-flex flex-column h-100">
                   <p class="mb-1 pt-2 text-bold">質問</p>
                   <h5 class="font-weight-bolder">{{ $question->title }}</h5>
-                  <p class="mb-5">{{ $question->content }}</p>
+                  <p class="mb-5 ">{{ $question->content }}</p>
               
                 </div>
               </div>
               <div class="col-lg-5 ms-auto text-center mt-5 mt-lg-0">
                 <div class="bg-gradient-primary border-radius-lg h-100">
-                  <img src="{{ asset('soft-ui-dashboard-main/assets/img/shapes/waves-white.svg') }}" class="position-absolute h-100 w-50 top-0 d-lg-block d-none" alt="waves">
+                  <img src="{{ asset('soft-ui-dashboard-main/assets/img/shapes/waves-white.svg') }}" class="position-absolute h-100 w-50 top-0 d-none" alt="waves">
                   <div class="position-relative d-flex align-items-center justify-content-center h-100">
                     <img class="w-100 position-relative z-index-2 pt-4" src="{{ asset('soft-ui-dashboard-main/assets/img/illustrations/rocket-white.png') }}" alt="rocket">
                   </div>
@@ -47,11 +47,11 @@
               <img src="{{ asset('soft-ui-dashboard-main/assets/img/kal-visuals-square.jpg') }}" alt="kal" class="border-radius-lg shadow">
             </div>
             <div class="d-flex align-items-start flex-column justify-content-center">
-              <h6 class="mb-0 text-sm">{{ $answer->user->name }}</h6>
+              <h6 class="mb-0 text-sm">{{ $answer->user->name }}さん</h6>
               <p class="mb-0 text-xs">Hi! I need more information..</p>
             </div>
             <hr>
-            <p class="mb-5">{{ $answer->content }}</p>
+            <p class="mb-5 font-weight-bolder">{{ $answer->content }}</p>
             <hr class="horizontal gray-light my-4">
           </div>
         </div>
