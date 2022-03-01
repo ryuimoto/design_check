@@ -36,7 +36,7 @@ Route::group(['middleware' => 'auth.very_basic'], function() {
 
         Route::get('questions','User\QuestionController@index')->name('user.questions');
 
-        Route::get('question','User\QuestionController@detail')->name('user.question_detail');
+        Route::get('question/{question_id}','User\QuestionController@detail')->name('user.question_detail');
 
 
         Route::get('logout','User\Auth\LoginController@logout')->name('user.logout');

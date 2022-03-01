@@ -20,9 +20,12 @@
                               <img src="{{ asset('soft-ui-dashboard-main/assets/img/home-decor-1.jpg') }}" alt="img-blur-shadow" class="img-fluid shadow border-radius-xl">
                             </a>
                           </div>
+                          @php
+                              $question = collect($question);
+                          @endphp
                           <div class="card-body px-1 pb-0">
-                            <p class="text-gradient text-dark mb-2 text-sm">Project #2</p>
-                            <a href="javascript:;">
+                            <p class="text-gradient text-dark mb-2 text-sm">5人が回答</p>
+                            <a href="{{ route('user.question_detail',['question_id' => $question['id']]) }}"> 
                               <h5>
                                 {{ $question['title'] }}
                               </h5>
@@ -31,7 +34,7 @@
                               {{ $question['content'] }}
                             </p>
                             <div class="d-flex align-items-center justify-content-between">
-                              <button type="button" class="btn btn-outline-primary btn-sm mb-0" onclick="location.href='{{ route('user.question_detail') }}'">View Project</button>
+                              <button type="button" class="btn btn-outline-primary btn-sm mb-0" onclick="location.href='{{ route('user.question_detail',['question_id' => $question['id']])}}'">回答を見る</button>
                               <div class="avatar-group mt-2">
                                 <a href="javascript:;" class="avatar avatar-xs rounded-circle" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Elena Morison">
                                   <img alt="Image placeholder" src="{{ asset('soft-ui-dashboard-main/assets/img/team-1.jpg') }}">

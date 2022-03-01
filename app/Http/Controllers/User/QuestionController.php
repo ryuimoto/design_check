@@ -23,7 +23,13 @@ class QuestionController extends Controller
         ]);
     }
 
-    public function detail(){
-        return view('user.dashboard.question_detail');
+    public function detail($question_id){
+        $question = Question::find($question_id);
+        $answers = Answer::where('question_id',$question->id)->get();
+
+        return view('user.dashboard.question_detail')->with([
+            'question' => $question,
+            'answers' => $answers
+        ]);
     }
 }
