@@ -3,6 +3,7 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\HasOne;
 use Illuminate\Support\Str;
 use Illuminate\Notifications\Notifiable;
 
@@ -32,5 +33,9 @@ class Answer extends Model
     protected $fillable = [
  
     ];
+
+    public function user(){
+        return $this->hasOne('App\User','id','user_id');
+    }
 
 }
