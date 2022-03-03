@@ -17,7 +17,22 @@
                 <div class="bg-gradient-primary border-radius-lg h-100">
                   <img src="{{ asset('soft-ui-dashboard-main/assets/img/shapes/waves-white.svg') }}" class="position-absolute h-100 w-50 top-0 d-none" alt="waves">
                   <div class="position-relative d-flex align-items-center justify-content-center h-100">
-                    <img class="w-100 position-relative z-index-2 pt-4" src="{{ asset('soft-ui-dashboard-main/assets/img/illustrations/rocket-white.png') }}" alt="rocket">
+                    <a href="" data-bs-toggle="modal" data-bs-target="#imgUp">
+                      <img class="w-100 position-relative z-index-2 pt-4" src="{{ asset('soft-ui-dashboard-main/assets/img/illustrations/rocket-white.png') }}" alt="rocket">
+                    </a>
+                    <!-- Modal -->
+                    <div class="modal fade" id="imgUp" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                      <div class="modal-dialog modal-xl">
+                        <div class="modal-content">
+                          <div class="modal-header">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                          </div>
+                          <div class="modal-body">
+                            <img class="w-100 position-relative z-index-2 pt-4" src="{{ asset('soft-ui-dashboard-main/assets/img/illustrations/rocket-white.png') }}" alt="rocket">
+                          </div>
+                        </div>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>

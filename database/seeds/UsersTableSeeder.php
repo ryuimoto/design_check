@@ -21,6 +21,7 @@ class UsersTableSeeder extends Seeder
             $email = "test$i@test.com";
             $random_password = (string) Str::uuid();
 
+
             User::create([
                 'name' => $name,
                 'email' => $email,
