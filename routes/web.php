@@ -38,7 +38,10 @@ Route::group(['middleware' => 'auth.very_basic'], function() {
 
         Route::get('question/{question}','User\QuestionController@detail')->name('user.question_detail');
 
-
         Route::get('logout','User\Auth\LoginController@logout')->name('user.logout');
+    });
+
+    Route::get('test',function (){
+        return view('test');
     });
 });
