@@ -36,6 +36,9 @@ Route::group(['middleware' => 'auth.very_basic'], function() {
 
         Route::get('questions','User\QuestionController@index')->name('user.questions');
 
+        Route::get('question/create','User\QuestionController@indexCreate')->name('user.question.create');
+        Route::post('question/create','User\QuestionController@postCreate');
+
         Route::get('question/{question}','User\QuestionController@detail')->name('user.question_detail');
 
 

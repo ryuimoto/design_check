@@ -24,7 +24,12 @@ class Question extends Model
     use Notifiable;
 
     protected $fillable = [
-        
+        'user_id',
+        'file_path',
+        'title',
+        'content',
+        'good',
+        'pv'
     ];
 
     public function user(){

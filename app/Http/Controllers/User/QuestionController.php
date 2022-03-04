@@ -31,4 +31,31 @@ class QuestionController extends Controller
             'answers' => $answers
         ]);
     }
+
+    public function indexCreate(){
+        return view('user.dashboard.create');
+    }
+
+    public function postCreate(Request $request){
+        $this->postValidate($request);
+        $user = Auth::user();
+        $file_path = null;
+
+        Question::create([
+            'user_id' => $user->id,
+            'file_path' => $file_path,
+            'title' => $request->title,
+            'content' => $request->content,
+        ]);
+
+        return back();
+    }
+
+    public function postValidate($request){
+        $request->validate([
+            'file_path' => 'nullable|image|mimes:jpg,png,jpeg,gif,svg|max:2048',
+            'title' => 'required|max:255',
+            'content' => 'required|max:800',
+        ]);
+    }
 }

@@ -16,10 +16,11 @@ class CreateQuestionsTable extends Migration
         Schema::create('questions', function (Blueprint $table) {
             $table->uuid('id')->primary();
             $table->string('user_id');
+            $table->string('file_path')->nullable();
             $table->string('title');
             $table->text('content');
-            $table->integer('good');
-            $table->integer('pv');
+            $table->integer('good')->default((int)0);
+            $table->integer('pv')->default((int)0);
             $table->timestamps();
         });
     }
