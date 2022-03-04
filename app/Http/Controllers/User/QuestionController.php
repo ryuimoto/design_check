@@ -48,7 +48,7 @@ class QuestionController extends Controller
             'content' => $request->content,
         ]);
 
-        return back();
+        return redirect()->route('user.questions');
     }
 
     public function postValidate($request){
