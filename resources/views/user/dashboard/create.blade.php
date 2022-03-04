@@ -11,24 +11,25 @@
                     @csrf
                     <label>スクリーンショットファイル</label>
                     <div class="mb-3">
-                      @error('img')
+                      @error('file_path')
                         <div class="alert alert-danger">{{ $message }}</div>
                       @enderror
-                      <input class="form-control" type="file" id="formFile" name="img">
+                      <input class="form-control" type="file" id="formFile" name="file_path" value="{{ old('file_path') }}">
                     </div>
                     <label>タイトル</label>
                     <div class="mb-3">
                       @error('title')
                         <div class="alert alert-danger">{{ $message }}</div>
                       @enderror
-                      <input type="text" class="form-control" placeholder="ヘッダーには必ずロゴを入れた方がいいですか？" aria-label="Email" aria-describedby="email-addon" name="title">
+                      <input type="text" class="form-control" placeholder="ヘッダーには必ずロゴを入れた方がいいですか？" aria-label="Email" aria-describedby="email-addon" name="title" value="{{ old('title') }}">
                     </div>
                     <label>詳細</label>
                     <div class="mb-3">
                         @error('content')
                           <div class="alert alert-danger">{{ $message }}</div>
                         @enderror
-                        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="WEBサイトの場合「noindex」にしていない限りどのページもランディングの対象になります。そのため、常に表示してあるグローバルエリアにロゴやサイトの特性を置くのはブランディング効果があると思います。しかし、サービスや機能を理解したうえでダウンロードして使うアプリケーションなどではロゴは起動時にある程度で、あとは機能の使いやすさに特化したUIでも問題ないかと思います。（※ただし、最近は画面のスクリーンショットがユーザー間で共有されることが多いので、敢えてロゴを入れておくのはブランディング戦略のひとつと言えるかもしれません。）" name="content"></textarea>
+                        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="WEBサイトの場合「noindex」にしていない限りどのページもランディングの対象になります。そのため、常に表示してあるグローバルエリアにロゴやサイトの特性を置くのはブランディング効果があると思います。しかし、サービスや機能を理解したうえでダウンロードして使うアプリケーションなどではロゴは起動時にある程度で、あとは機能の使いやすさに特化したUIでも問題ないかと思います。
+                        （※ただし、最近は画面のスクリーンショットがユーザー間で共有されることが多いので、敢えてロゴを入れておくのはブランディング戦略のひとつと言えるかもしれません。）" name="content">{{ old('content') }}</textarea>
                     </div>
                     <div class="text-center">
                       <button type="submit" class="btn bg-gradient-info w-100 mt-4 mb-0">投稿する</button>

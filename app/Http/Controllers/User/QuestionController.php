@@ -39,13 +39,13 @@ class QuestionController extends Controller
     public function postCreate(Request $request){
         $this->postValidate($request);
         $user = Auth::user();
-        $file_path = null;
-
+        
+        $file_name = $this->imgCreate($request);
         Question::create([
             'user_id' => $user->id,
-            'file_path' => $file_path,
             'title' => $request->title,
             'content' => $request->content,
+            'file_path' => $file_name,
         ]);
 
         return redirect()->route('user.questions');
