@@ -58,4 +58,13 @@ class QuestionController extends Controller
             'content' => 'required|max:800',
         ]);
     }
+
+    public function imgCreate($request){
+        if(!is_null($request->file('file_path'))){
+            $file_name = str_random(10).".".$request->file('file_path')->getClientOriginalExtension();
+
+            $request->file('file_path')->storeAs('',"public/file_path/$file_name");
+        }
+
+    }
 }
