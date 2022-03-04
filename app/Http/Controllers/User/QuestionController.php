@@ -41,6 +41,7 @@ class QuestionController extends Controller
         $user = Auth::user();
         
         $file_name = $this->imgCreate($request);
+
         Question::create([
             'user_id' => $user->id,
             'title' => $request->title,
@@ -66,5 +67,6 @@ class QuestionController extends Controller
             $request->file('file_path')->storeAs('',"public/file_path/$file_name");
         }
 
+        return $file_name;
     }
 }

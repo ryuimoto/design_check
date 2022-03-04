@@ -13,14 +13,14 @@
               <div class="card-body p-3">
                 <div class="row">
                   @foreach ($questions as $question)
-                  @php
-                  @endphp
                     <div class="col-xl-3 col-md-6 mb-xl-0 mb-4">
                       <div class="card card-blog card-plain">
                         <div class="position-relative">
-                          <a class="d-block shadow-xl border-radius-xl">
-                            <img src="{{ asset('soft-ui-dashboard-main/assets/img/home-decor-1.jpg') }}" alt="img-blur-shadow" class="img-fluid shadow border-radius-xl">
-                          </a>
+                          @if (isset($question->file_path))
+                            <a class="d-block shadow-xl border-radius-xl" href="{{ route('user.question_detail',['question' => $question->id]) }}">
+                              <img src="{{ asset("storage/file_path/$question->file_path") }}" alt="img-blur-shadow" class="img-fluid shadow border-radius-xl">
+                            </a>
+                          @endif
                         </div>
                         <div class="card-body px-1 pb-0">
                           <p class="text-gradient text-dark mb-2 text-sm">{{ $question->answers->count() }} 人が回答</p>
@@ -33,7 +33,7 @@
                             {{ $question->content }}
                           </p>
                           <div class="d-flex align-items-center justify-content-between">
-                            <button type="button" class="btn btn-outline-primary btn-sm mb-0" onclick="location.href='{{ route('user.question_detail',['question' => $question->id])}}'">回答を見る</button>
+                            <button type="button" class="btn btn-outline-primary btn-sm mb-0" onclick="location.href='{{ route('user.question_detail',['question' => $question->id]) }}'">回答を見る</button>
                             <div class="avatar-group mt-2">
                               <a href="javascript:;" class="avatar avatar-xs rounded-circle" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Elena Morison">
                                 <img alt="Image placeholder" src="{{ asset('soft-ui-dashboard-main/assets/img/team-1.jpg') }}">
