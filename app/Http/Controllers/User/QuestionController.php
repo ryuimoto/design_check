@@ -61,6 +61,8 @@ class QuestionController extends Controller
     }
 
     public function imgCreate($request){
+        $file_name = null;
+
         if(!is_null($request->file('file_path'))){
             $file_name = str_random(10).".".$request->file('file_path')->getClientOriginalExtension();
 

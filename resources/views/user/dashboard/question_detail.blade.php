@@ -10,30 +10,31 @@
                   <p class="mb-1 pt-2 text-bold">質問</p>
                   <h5 class="font-weight-bolder">{{ $question->title }}</h5>
                   <p class="mb-5 ">{{ $question->content }}</p>
-              
                 </div>
               </div>
               <div class="col-lg-5 ms-auto text-center mt-5 mt-lg-0">
-                <div class="bg-gradient-primary border-radius-lg h-100">
-                  <div class="position-relative d-flex align-items-center justify-content-center h-100">
-                    <a href="" data-bs-toggle="modal" data-bs-target="#imgUp">
-                      <img class="w-100 position-relative z-index-2 pt-4" src="{{ asset("storage/file_path/$question->file_path") }}" alt="rocket">
-                    </a>
-                    <!-- Modal -->
-                    <div class="modal fade" id="imgUp" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-                      <div class="modal-dialog modal-xl">
-                        <div class="modal-content">
-                          <div class="modal-header">
-                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                          </div>
-                          <div class="modal-body">
-                            <img class="w-100 position-relative z-index-2 pt-4" src="{{ asset("storage/file_path/$question->file_path") }}" alt="rocket">
+                @if (isset($question->file_path))
+                  <div class="border-radius-lg h-100">
+                    <div class="position-relative d-flex align-items-center justify-content-center h-100">
+                      <a href="" data-bs-toggle="modal" data-bs-target="#imgUp">
+                        <img class="w-100 position-relative z-index-2 pt-4" src="{{ asset("storage/file_path/$question->file_path") }}" alt="rocket">
+                      </a>
+                      <!-- Modal -->
+                      <div class="modal fade" id="imgUp" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                        <div class="modal-dialog modal-xl">
+                          <div class="modal-content">
+                            <div class="modal-header">
+                              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                            </div>
+                            <div class="modal-body">
+                              <img class="w-100 position-relative z-index-2 pt-4" src="{{ asset("storage/file_path/$question->file_path") }}" alt="rocket">
+                            </div>
                           </div>
                         </div>
                       </div>
                     </div>
                   </div>
-                </div>
+                @endif
               </div>
             </div>
           </div>
