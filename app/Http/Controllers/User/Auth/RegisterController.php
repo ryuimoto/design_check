@@ -42,7 +42,7 @@ class RegisterController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('guest');
+        $this->middleware('guest')->except('logout');
     }
 
     /**
@@ -80,7 +80,6 @@ class RegisterController extends Controller
         $two_factor_auth_controller = app()->make('App\Http\Controllers\TwoFactorAuthController');
         $two_factor_auth_controller->firstAuth($data,$random_password);
     
-        
         // return User::create([
         //     'email' => $data['email'],
         //     'tfa_token' => $random_password,
